@@ -19,22 +19,36 @@ class SearchText(unittest.TestCase):
             inst.driver.implicitly_wait(30)
             inst.driver.maximize_window()
             # navigate to the application home page
-            inst.driver.get("http://www.google.com/")
+            inst.driver.get("https://www.mytime.com/users/sign_in")
             inst.driver.title
-    def test_algreen(self):
+
+    def test_mytime(self):
         """
-        Will go to youtube login into my account and subscribe to the channel
+
         :return:
         """
-        # get the search textbox
-        self.search_field = self.driver.find_element_by_name("q")
+        self.search_field = self.driver.find_element_by_xpath('//*[@id="user_login"]')
+        self.search_field.send_keys("tim@scenthound.com")
+        self.search_field = self.driver.find_element_by_xpath('//*[@id="user_password"]')
+        self.search_field.send_keys("Vogel1234")
+        self.driver.find_element_by_xpath('//*[@id="sign_in_form"]/div[7]/button').click()
+        self.driver.find_element_by_xpath('// *[ @ id = "mytime_nav_bar"] / div / ul / li[3] / a').click()
+        # this line closes the text box that shows new feature don't know why it's no longer showing up
+        # self.driver.find_element_by_xpath('/ html / body / div[8] / div / div / div / div / div[1] / a').click()
 
-        # clears the texbox
-        self.search_field.clear()
-
-        # enter search keyword and submit
-        self.search_field.send_keys("Al Green Simply Beautiful")
-        self.search_field.submit()
+        self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[5]/div/div/div/div/div[2]/my-child-table/div/table/tbody[3]/tr/td[5]/ul/li[3]/a').click()
+        time.sleep(5)
+        self.driver.find_element_by_xpath('//*[@id="merchant-filter"]/ul/li/div[1]/a').click()
+        self.driver.find_element_by_xpath('// *[ @ id = "merchant-filter"] / ul / li / div[2] / p[4] / a').click()
+        self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[3]/div/div/div[3]/a').click()
+        # self.driver.find_element_by_xpath().click()
+        button = self.driver.find_element_by_xpath('//*[@id="variation42789067"]/div/div[4]/div/a[2]')
+        self.driver.execute_script("arguments[0].click();", button)
+        button = self.driver.find_element_by_xpath('// *[ @ id = "variation42789067"] / div[2] / div / div[8] / div[3] / a')
+        self.driver.execute_script("arguments[0].click();", button)
+        self.search_field = self.driver.find_element_by_xpath('/ html / body / div[8] / div / div / div / div / div / div[2] / div[1] / div[2] / div / div / div / input')
+        self.search_field.send_keys("tim@scenthound.com")
+        time.sleep(100)
 
         # goes to the vidoes tab on google
         self.driver.find_element_by_xpath('//*[@id="hdtb-msb-vis"]/div[2]/a').click()
@@ -59,6 +73,7 @@ class SearchText(unittest.TestCase):
         # self.driver.find_element_by_xpath('//*[@id="subscribe-button"]/ytd-subscribe-button-renderer/paper-button').click()
         time.sleep(100)
         self.pass_log()
+
 
 
 

@@ -21,6 +21,46 @@ class HomePageTest(unittest.TestCase):
         # navigate to the application home page """
         inst.driver.get("http://www.google.com/")
 
+
+    def test_algreen(self):
+        """
+        Watches al green videp
+        :return:
+        """
+        # get the search textbox
+        self.search_field = self.driver.find_element_by_name("q")
+
+        # clears the texbox
+        self.search_field.clear()
+
+        # enter search keyword and submit
+        self.search_field.send_keys("Al Green Simply Beautiful")
+        self.search_field.submit()
+
+        # goes to the vidoes tab on google
+        self.driver.find_element_by_xpath('//*[@id="hdtb-msb-vis"]/div[2]/a').click()
+
+        # clicks on the third link
+        self.driver.find_element_by_xpath('//*[@id="rso"]/div/div/div[3]/div/div/div[1]/a').click()
+
+        # goes to the sign in button
+        self.driver.find_element_by_xpath('//*[@id="buttons"]/ytd-button-renderer').click()
+
+        # clicks on the username and password types them both in to log into my account
+        self.search_field = self.driver.find_element_by_xpath('//*[@id="identifierId"]')
+        self.search_field.send_keys("kevkern3@gmail.com")
+        self.driver.find_element_by_xpath('// *[ @ id = "identifierNext"]').click()
+        self.search_field = self.driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
+        self.search_field.send_keys("Teamdoritos4")
+        self.driver.find_element_by_xpath('//*[@id="passwordNext"]/span/span').click()
+
+        self.driver.find_element_by_xpath('// *[ @ id = "movie_player"] / div[21] / div[1] / div[1] / div[1]').click()
+
+        # clicks the subsrcibe button
+        # self.driver.find_element_by_xpath('//*[@id="subscribe-button"]/ytd-subscribe-button-renderer/paper-button').click()
+        time.sleep(100)
+        self.pass_log()
+
     # def test_search_box(self):
     #      # check search box exists on Home page
     #     self.assertTrue(self.is_element_present(By.NAME, "q"))
