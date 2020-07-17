@@ -6,7 +6,7 @@ import logging
 import time
 from nose.tools import assert_equal
 
-users = pd.read_excel('./employees_scentcheck.xlsx')
+users = pd.read_excel('./Breed List.xlsx')
 
 
 class SearchText(unittest.TestCase):
@@ -27,6 +27,7 @@ class SearchText(unittest.TestCase):
 
         :return:
         """
+        print(users)
         self.search_field = self.driver.find_element_by_xpath('//*[@id="user_login"]')
         self.search_field.send_keys("tim@scenthound.com")
         self.search_field = self.driver.find_element_by_xpath('//*[@id="user_password"]')
