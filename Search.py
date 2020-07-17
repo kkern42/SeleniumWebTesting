@@ -1,4 +1,4 @@
-
+import pandas as pd
 import unittest
 from selenium import webdriver
 import sys
@@ -6,7 +6,7 @@ import logging
 import time
 from nose.tools import assert_equal
 
-
+users = pd.read_excel('./employees_scentcheck.xlsx')
 
 
 class SearchText(unittest.TestCase):
