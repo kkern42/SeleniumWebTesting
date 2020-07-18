@@ -6,7 +6,7 @@ import logging
 import time
 from nose.tools import assert_equal
 
-users = pd.read_excel('./Breed List.xlsx')
+breeds = pd.read_excel('./Breed List.xlsx', 'all')
 
 
 class SearchText(unittest.TestCase):
@@ -27,7 +27,7 @@ class SearchText(unittest.TestCase):
 
         :return:
         """
-        print(users)
+        # print(list(breeds))
         self.search_field = self.driver.find_element_by_xpath('//*[@id="user_login"]')
         self.search_field.send_keys("tim@scenthound.com")
         self.search_field = self.driver.find_element_by_xpath('//*[@id="user_password"]')
@@ -36,7 +36,6 @@ class SearchText(unittest.TestCase):
         self.driver.find_element_by_xpath('// *[ @ id = "mytime_nav_bar"] / div / ul / li[3] / a').click()
         # this line closes the text box that shows new feature don't know why it's no longer showing up
         # self.driver.find_element_by_xpath('/ html / body / div[8] / div / div / div / div / div[1] / a').click()
-
         self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[5]/div/div/div/div/div[2]/my-child-table/div/table/tbody[3]/tr/td[5]/ul/li[3]/a').click()
         time.sleep(5)
         self.driver.find_element_by_xpath('//*[@id="merchant-filter"]/ul/li/div[1]/a').click()
@@ -45,10 +44,41 @@ class SearchText(unittest.TestCase):
         # self.driver.find_element_by_xpath().click()
         button = self.driver.find_element_by_xpath('//*[@id="variation42789067"]/div/div[4]/div/a[2]')
         self.driver.execute_script("arguments[0].click();", button)
+
+        # this clicks edit i think
         button = self.driver.find_element_by_xpath('// *[ @ id = "variation42789067"] / div[2] / div / div[8] / div[3] / a')
         self.driver.execute_script("arguments[0].click();", button)
-        self.search_field = self.driver.find_element_by_xpath('/ html / body / div[8] / div / div / div / div / div / div[2] / div[1] / div[2] / div / div / div / input')
-        self.search_field.send_keys("tim@scenthound.com")
+
+        for index, row in breeds.iterrows():
+            time.sleep(2)
+            # this clicks edit i think
+            button = self.driver.find_element_by_xpath(
+                '// *[ @ id = "variation42789067"] / div[2] / div / div[8] / div[3] / a')
+            self.driver.execute_script("arguments[0].click();", button)
+            self.search_field = self.driver.find_element_by_xpath(
+                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[1] / div[2] / div / div / div / input')
+            print(row.Breed)
+            self.search_field.send_keys(str(row.Breed))
+            self.search_field = self.driver.find_element_by_xpath(
+                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+            self.search_field.send_keys("10")
+
+            self.search_field = self.driver.find_element_by_xpath(
+                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+            self.search_field.send_keys("10")
+
+            self.search_field = self.driver.find_element_by_xpath(
+                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+            self.search_field.send_keys("10")
+
+            # saves new breed
+            button = self.driver.find_element_by_xpath(
+                '/ html / body / div[8] / div / div / div / div / div / div[3] / div / a[2]')
+            self.driver.execute_script("arguments[0].click();", button)
+
+
+
+
         time.sleep(100)
 
         # goes to the vidoes tab on google
