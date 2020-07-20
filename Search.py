@@ -8,7 +8,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 from nose.tools import assert_equal
 from selenium.webdriver.common.keys import Keys
 
-breeds = pd.read_excel('./Breed List.xlsx', 'all')
+special = pd.read_excel('./Breed List.xlsx', 'Special')
+one = pd.read_excel('./Breed List.xlsx', '1')
+two = pd.read_excel('./Breed List.xlsx', '2')
+three = pd.read_excel('./Breed List.xlsx', '3')
+
+tables = [special, one, two, three]
 
 
 class SearchText(unittest.TestCase):
@@ -43,36 +48,45 @@ class SearchText(unittest.TestCase):
         self.driver.find_element_by_xpath('// *[ @ id = "merchant-filter"] / ul / li / div[2] / p[4] / a').click()
         self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[3]/div/div/div[3]/a').click()
         # self.driver.find_element_by_xpath().click()
-        button = self.driver.find_element_by_xpath('//*[@id="variation42789067"]/div/div[4]/div/a[2]')
+        button = self.driver.find_element_by_xpath('//*[@id="variation42879868"]/div/div[4]/div/a[2]')
         self.driver.execute_script("arguments[0].click();", button)
 
 
-        # this clicks edit i think
+        # this addnew edit i think
         # button = self.driver.find_element_by_xpath(
-        #     '// *[ @ id = "variation42789067"] / div[2] / div / div[8] / div[3] / a')
+        #     '//*[@id="variation42879868"]/div[2]/div/div[8]/div[3]/a')
         # self.driver.execute_script("arguments[0].click();", button)
         #
         #
         # self.search_field = self.driver.find_element_by_xpath(
-        #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[1] / div[2] / div / div / div / input')
+        #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
         # self.search_field.send_keys('Akita - Speciality')
         #
         # self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+        #
+        # self.search_field.send_keys('Afghan')
+        #
+        # self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
 
-        for index, row in breeds.iterrows():
-            time.sleep(1)
-            # this clicks edit i think
+        for table in tables:
+            # add new
             button = self.driver.find_element_by_xpath(
-                '// *[ @ id = "variation42789067"] / div[2] / div / div[8] / div[3] / a')
+                '//*[@id="variation42879868"]/div[2]/div/div[8]/div[3]/a')
             self.driver.execute_script("arguments[0].click();", button)
+
+            # breed input field
             self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[1] / div[2] / div / div / div / input')
-            print(row.Breed)
-            self.search_field.send_keys(str(row.Breed))
-            # clicks on the right one
-            self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+                '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
 
+            for index, row in table.iterrows():
+                time.sleep(5)
+                print(row.Breed)
+                # this clicks addnew i think
+                self.search_field.send_keys(str(row.Breed))
+                # clicks on the right one
+                self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
 
+            # fills out time
             self.search_field = self.driver.find_element_by_xpath(
                 '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
             self.search_field.send_keys("10")
@@ -85,13 +99,17 @@ class SearchText(unittest.TestCase):
                 '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
             self.search_field.send_keys("10")
 
-            # saves new breed
+            # saves new thing
             button = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[3] / div / a[2]')
+                '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
             self.driver.execute_script("arguments[0].click();", button)
 
+
+
+
+        # presses save button for everyhting
         button = self.driver.find_element_by_xpath(
-            '// *[ @ id = "variation42789067"] / div[2] / div / div[9] / div[2] / input')
+            '//*[@id="variation42879868"]/div[2]/div/div[9]/div[2]/input')
         self.driver.execute_script("arguments[0].click();", button)
 
         time.sleep(100)
