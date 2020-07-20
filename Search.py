@@ -30,8 +30,8 @@ class SearchText(unittest.TestCase):
 
     def test_mytime(self):
         """
-
-        :return:
+        add dog breeds to services in mytime
+        :return: void
         """
         # print(list(breeds))
         self.search_field = self.driver.find_element_by_xpath('//*[@id="user_login"]')
@@ -42,25 +42,33 @@ class SearchText(unittest.TestCase):
         time.sleep(.25)
         self.search_field.send_keys("Vogel1234")
         time.sleep(.25)
+
         self.driver.find_element_by_xpath('//*[@id="sign_in_form"]/div[7]/button').click()
         time.sleep(.25)
+
         self.driver.find_element_by_xpath('// *[ @ id = "mytime_nav_bar"] / div / ul / li[3] / a').click()
         time.sleep(.25)
+
         # this line closes the text box that shows new feature don't know why it's no longer showing up
         # self.driver.find_element_by_xpath('/ html / body / div[8] / div / div / div / div / div[1] / a').click()
+
         self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[5]/div/div/div/div/div[2]/my-child-table/div/table/tbody[3]/tr/td[5]/ul/li[3]/a').click()
         time.sleep(5)
+
         self.driver.find_element_by_xpath('//*[@id="merchant-filter"]/ul/li/div[1]/a').click()
         time.sleep(.25)
+
         self.driver.find_element_by_xpath('// *[ @ id = "merchant-filter"] / ul / li / div[2] / p[4] / a').click()
         time.sleep(.25)
+
         self.driver.find_element_by_xpath('//*[@id="ng-app"]/div[3]/div/div/div[3]/a').click()
         time.sleep(.25)
-        # self.driver.find_element_by_xpath().click()
-        button = self.driver.find_element_by_xpath('//*[@id="variation42879868"]/div/div[4]/div/a[2]')
+
+        # edit button to the left of service card
+        button = self.driver.find_element_by_xpath('// *[ @ id = "variation42884140"] / div / div[4] / div / a[2]')
         self.driver.execute_script("arguments[0].click();", button)
 
-        
+
         # this addnew edit i think
         # button = self.driver.find_element_by_xpath(
         #     '//*[@id="variation42879868"]/div[2]/div/div[8]/div[3]/a')
@@ -79,9 +87,9 @@ class SearchText(unittest.TestCase):
 
         for table in tables:
             time.sleep(.5)
-            # add new
+            # add new button on pop up
             button = self.driver.find_element_by_xpath(
-                '//*[@id="variation42879868"]/div[2]/div/div[8]/div[3]/a')
+                '//*[@id="variation42884140"]/div[2]/div/div[8]/div[3]/a')
             self.driver.execute_script("arguments[0].click();", button)
 
             time.sleep(.5)
@@ -117,12 +125,9 @@ class SearchText(unittest.TestCase):
                 '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
             self.driver.execute_script("arguments[0].click();", button)
 
-
-
-
         # presses save button for everyhting
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation42879868"]/div[2]/div/div[9]/div[2]/input')
+            '// *[ @ id = "variation42884140"] / div[2] / div / div[9] / div[2] / input')
         self.driver.execute_script("arguments[0].click();", button)
 
         time.sleep(100)
