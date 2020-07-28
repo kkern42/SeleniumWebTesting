@@ -9,11 +9,11 @@ from nose.tools import assert_equal
 from selenium.webdriver.common.keys import Keys
 
 special = pd.read_excel('./Breed List.xlsx', 'Special')
-one = pd.read_excel('./Breed List.xlsx', '1')
-two = pd.read_excel('./Breed List.xlsx', '2')
-three = pd.read_excel('./Breed List.xlsx', '3')
+# one = pd.read_excel('./Breed List.xlsx', '1')
+# two = pd.read_excel('./Breed List.xlsx', '2')
+# three = pd.read_excel('./Breed List.xlsx', '3')
 
-tables = [one, two, three, special]
+tables = [special]
 
 
 class SearchText(unittest.TestCase):
