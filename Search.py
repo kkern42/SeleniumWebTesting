@@ -9,11 +9,11 @@ from nose.tools import assert_equal
 from selenium.webdriver.common.keys import Keys
 
 special = pd.read_excel('./Breed List.xlsx', 'Special')
-# one = pd.read_excel('./Breed List.xlsx', '1')
-# two = pd.read_excel('./Breed List.xlsx', '2')
-# three = pd.read_excel('./Breed List.xlsx', '3')
+one = pd.read_excel('./Breed List.xlsx', '1')
+two = pd.read_excel('./Breed List.xlsx', '2')
+three = pd.read_excel('./Breed List.xlsx', '3')
 
-tables = [special]
+tables = [one, two, three, special]
 
 
 class SearchText(unittest.TestCase):
@@ -73,7 +73,7 @@ class SearchText(unittest.TestCase):
 
         # path for drop down location
         button = inst.driver.find_element_by_xpath(
-            '//*[@id="ng-app"]/div[7]/div/div/div/div/div/div/div/div[1]/div/div/ul/my-mt-location-search-select/div/span/div/div/div[2]/span/ul/li[5]')
+            '//*[@id="ng-app"]/div[7]/div/div/div/div/div/div/div/div[1]/div/div/ul/my-mt-location-search-select/div/span/div/div/div[2]/span/ul/li[2]')
         inst.driver.execute_script("arguments[0].click();", button)
 
         time.sleep(10)
