@@ -73,7 +73,7 @@ class SearchText(unittest.TestCase):
 
         # path for drop down location
         button = inst.driver.find_element_by_xpath(
-            '//*[@id="ng-app"]/div[7]/div/div/div/div/div/div/div/div[1]/div/div/ul/my-mt-location-search-select/div/span/div/div/div[2]/span/ul/li[6]')
+            '//*[@id="ng-app"]/div[7]/div/div/div/div/div/div/div/div[1]/div/div/ul/my-mt-location-search-select/div/span/div/div/div[2]/span/ul/li[5]')
         inst.driver.execute_script("arguments[0].click();", button)
 
         time.sleep(10)
