@@ -4,6 +4,7 @@ import sys
 import logging
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
+import time
 
 
 class HomePageTest(unittest.TestCase):
@@ -36,29 +37,29 @@ class HomePageTest(unittest.TestCase):
         # enter search keyword and submit
         self.search_field.send_keys("Al Green Simply Beautiful")
         self.search_field.submit()
-
+        time.sleep(2)
         # goes to the vidoes tab on google
         self.driver.find_element_by_xpath('//*[@id="hdtb-msb-vis"]/div[2]/a').click()
-
+        time.sleep(2)
         # clicks on the third link
-        self.driver.find_element_by_xpath('//*[@id="rso"]/div/div/div[3]/div/div/div[1]/a').click()
-
-        # goes to the sign in button
-        self.driver.find_element_by_xpath('//*[@id="buttons"]/ytd-button-renderer').click()
-
-        # clicks on the username and password types them both in to log into my account
-        self.search_field = self.driver.find_element_by_xpath('//*[@id="identifierId"]')
-        self.search_field.send_keys("kevkern3@gmail.com")
-        self.driver.find_element_by_xpath('// *[ @ id = "identifierNext"]').click()
-        self.search_field = self.driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
-        self.search_field.send_keys("Teamdoritos4")
-        self.driver.find_element_by_xpath('//*[@id="passwordNext"]/span/span').click()
-
-        self.driver.find_element_by_xpath('// *[ @ id = "movie_player"] / div[21] / div[1] / div[1] / div[1]').click()
+        self.driver.find_element_by_xpath('//*[@id="rso"]/div[2]/div/div[1]/a/h3').click()
+        time.sleep(25)
+        # # goes to the sign in button
+        # self.driver.find_element_by_xpath('//*[@id="buttons"]/ytd-button-renderer').click()
+        #
+        # # clicks on the username and password types them both in to log into my account
+        # self.search_field = self.driver.find_element_by_xpath('//*[@id="identifierId"]')
+        # self.search_field.send_keys("kevkern3@gmail.com")
+        # self.driver.find_element_by_xpath('// *[ @ id = "identifierNext"]').click()
+        # self.search_field = self.driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
+        # self.search_field.send_keys(probably shouldn't put my password in this)
+        # self.driver.find_element_by_xpath('//*[@id="passwordNext"]/span/span').click()
+        #
+        # self.driver.find_element_by_xpath('// *[ @ id = "movie_player"] / div[21] / div[1] / div[1] / div[1]').click()
 
         # clicks the subsrcibe button
         # self.driver.find_element_by_xpath('//*[@id="subscribe-button"]/ytd-subscribe-button-renderer/paper-button').click()
-        time.sleep(100)
+
         self.pass_log()
 
     # def test_search_box(self):
