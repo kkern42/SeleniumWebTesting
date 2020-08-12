@@ -78,7 +78,7 @@ class SearchText(unittest.TestCase):
 
         time.sleep(10)
 
-    def test_barber(self):
+    def test_faceTrim(self):
         """
         add dog breeds to services in mytime
         :return: void
@@ -88,7 +88,7 @@ class SearchText(unittest.TestCase):
 
         # clicks edit button for blow
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41487597"]/div/div[4]/div/a')
+            '//*[@id="variation43618954"]/div/div[4]/div/a')
         self.driver.execute_script("arguments[0].click();", button)
         time.sleep(.25)
 
@@ -96,7 +96,7 @@ class SearchText(unittest.TestCase):
             time.sleep(2)
             # add new button on pop up
             button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41487597"]/div[2]/div/div[8]/div[3]/a')
+                '//*[@id="variation43618954"]/div[2]/div/div[7]/div[3]/a')
             self.driver.execute_script("arguments[0].click();", button)
 
             time.sleep(.5)
@@ -134,11 +134,11 @@ class SearchText(unittest.TestCase):
 
         # presses save button for everyhting
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41487597"]/div[2]/div/div[9]/div[2]/input')
+            '//*[@id="variation43618954"]/div[2]/div/div[8]/div[2]/input')
         self.driver.execute_script("arguments[0].click();", button)
         self.pass_log()
 
-    def test_blowOut(self):
+    def test_sanitaryTrim(self):
         """
         add dog breeds to services in mytime
         :return: void
@@ -148,15 +148,15 @@ class SearchText(unittest.TestCase):
 
         # clicks edit button for blow
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41490194"]/div/div[4]/div/a')
+            '//*[@id="variation43619006"]/div/div[4]/div/a')
         self.driver.execute_script("arguments[0].click();", button)
         time.sleep(.25)
 
         for table in tables:
-            time.sleep(.5)
+            time.sleep(2)
             # add new button on pop up
             button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41490194"]/div[2]/div/div[8]/div[3]/a')
+                '//*[@id="variation43619006"]/div[2]/div/div[7]/div[3]/a')
             self.driver.execute_script("arguments[0].click();", button)
 
             time.sleep(.5)
@@ -194,72 +194,11 @@ class SearchText(unittest.TestCase):
 
         # presses save button for everyhting
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41490194"]/div[2]/div/div[9]/div[2]/input')
+            '//*[@id="variation43619006"]/div[2]/div/div[8]/div[2]/input')
         self.driver.execute_script("arguments[0].click();", button)
         self.pass_log()
 
-    def test_essentialBarb(self):
-        """
-        add dog breeds to services in mytime
-        :return: void
-        """
-
-        time.sleep(2)
-
-        # clicks edit button for barber
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41490270"]/div/div[4]/div/a')
-        self.driver.execute_script("arguments[0].click();", button)
-        time.sleep(.25)
-
-        for table in tables:
-            time.sleep(.5)
-            # add new button on pop up
-            button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41490270"]/div[2]/div/div[8]/div[3]/a')
-            self.driver.execute_script("arguments[0].click();", button)
-
-            time.sleep(2)
-            # breed input field
-            self.search_field = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
-            time.sleep(2)
-            for index, row in table.iterrows():
-                print(row.Breed)
-                # this clicks addnew i think
-                self.search_field.send_keys(str(row.Breed))
-                time.sleep(.5)
-                # clicks on the right one
-                self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
-
-            time.sleep(.5)
-            # fills out time
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
-            self.search_field.send_keys("10")
-
-            time.sleep(.5)
-            # saves new thing
-            button = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
-            self.driver.execute_script("arguments[0].click();", button)
-
-        # presses save button for everyhting
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41490270"]/div[2]/div/div[9]/div[2]/input')
-        self.driver.execute_script("arguments[0].click();", button)
-
-        self.pass_log()
-
-    def test_brushOut(self):
+    def test_padTrim(self):
         """
         add dog breeds to services in mytime
         :return: void
@@ -269,15 +208,15 @@ class SearchText(unittest.TestCase):
 
         # clicks edit button for blow
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41487365"]/div/div[4]/div/a')
+            '//*[@id="variation43619049"]/div/div[4]/div/a')
         self.driver.execute_script("arguments[0].click();", button)
         time.sleep(.25)
 
         for table in tables:
-            time.sleep(.5)
+            time.sleep(2)
             # add new button on pop up
             button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41487365"]/div[2]/div/div[8]/div[3]/a')
+                '//*[@id="variation43619049"]/div[2]/div/div[7]/div[3]/a')
             self.driver.execute_script("arguments[0].click();", button)
 
             time.sleep(.5)
@@ -315,129 +254,370 @@ class SearchText(unittest.TestCase):
 
         # presses save button for everyhting
         button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41487365"]/div[2]/div/div[9]/div[2]/input')
+            '//*[@id="variation43619049"]/div[2]/div/div[8]/div[2]/input')
         self.driver.execute_script("arguments[0].click();", button)
         self.pass_log()
 
-    def test_furMinator(self):
-        """
-        add dog breeds to services in mytime
-        :return: void
-        """
-
-        time.sleep(2)
-
-        # clicks edit button for blow
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41489380"]/div/div[4]/div/a')
-        self.driver.execute_script("arguments[0].click();", button)
-        time.sleep(.25)
-
-        for table in tables:
-            time.sleep(.5)
-            # add new button on pop up
-            button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41489380"]/div[2]/div/div[7]/div[3]/a')
-            self.driver.execute_script("arguments[0].click();", button)
-
-            time.sleep(.5)
-            # breed input field
-            self.search_field = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
-            time.sleep(2)
-            for index, row in table.iterrows():
-                print(row.Breed)
-                # this clicks addnew i think
-                self.search_field.send_keys(str(row.Breed))
-                time.sleep(.5)
-                # clicks on the right one
-                self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
-
-            time.sleep(.5)
-            # fills out time
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
-            self.search_field.send_keys("10")
-
-            time.sleep(.5)
-            # saves new thing
-            button = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
-            self.driver.execute_script("arguments[0].click();", button)
-
-        # presses save button for everyhting
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41489380"]/div[2]/div/div[8]/div[2]/input')
-        self.driver.execute_script("arguments[0].click();", button)
-        self.pass_log()
-
-    def test_fleaTick(self):
-        """
-        add dog breeds to services in mytime
-        :return: void
-        """
-
-        time.sleep(5)
-
-        # clicks edit button for blow
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41489442"]/div/div[4]/div/a')
-        self.driver.execute_script("arguments[0].click();", button)
-        time.sleep(.25)
-
-        for table in tables:
-            time.sleep(.5)
-            # add new button on pop up
-            button = self.driver.find_element_by_xpath(
-                '//*[@id="variation41489442"]/div[2]/div/div[7]/div[3]/a')
-            self.driver.execute_script("arguments[0].click();", button)
-
-            time.sleep(.5)
-            # breed input field
-            self.search_field = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
-            time.sleep(2)
-            for index, row in table.iterrows():
-                print(row.Breed)
-                # this clicks addnew i think
-                self.search_field.send_keys(str(row.Breed))
-                time.sleep(.5)
-                # clicks on the right one
-                self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
-
-            time.sleep(.5)
-            # fills out time
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
-            self.search_field.send_keys("10")
-
-            self.search_field = self.driver.find_element_by_xpath(
-                '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
-            self.search_field.send_keys("10")
-
-            time.sleep(.5)
-            # saves new thing
-            button = self.driver.find_element_by_xpath(
-                '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
-            self.driver.execute_script("arguments[0].click();", button)
-
-        # presses save button for everyhting
-        button = self.driver.find_element_by_xpath(
-            '//*[@id="variation41489442"]/div[2]/div/div[8]/div[2]/input')
-        self.driver.execute_script("arguments[0].click();", button)
-        self.pass_log()
+    # def test_barber(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(2)
+    #
+    #     # clicks edit button for blow
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41487597"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(2)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41487597"]/div[2]/div/div[8]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(.5)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41487597"]/div[2]/div/div[9]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     self.pass_log()
+    #
+    # def test_blowOut(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(2)
+    #
+    #     # clicks edit button for blow
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41490194"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(.5)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41490194"]/div[2]/div/div[8]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(.5)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41490194"]/div[2]/div/div[9]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     self.pass_log()
+    #
+    # def test_essentialBarb(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(2)
+    #
+    #     # clicks edit button for barber
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41490270"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(.5)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41490270"]/div[2]/div/div[8]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(2)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41490270"]/div[2]/div/div[9]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     self.pass_log()
+    #
+    # def test_brushOut(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(2)
+    #
+    #     # clicks edit button for blow
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41487365"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(.5)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41487365"]/div[2]/div/div[8]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(.5)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41487365"]/div[2]/div/div[9]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     self.pass_log()
+    #
+    # def test_furMinator(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(2)
+    #
+    #     # clicks edit button for blow
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41489380"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(.5)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41489380"]/div[2]/div/div[7]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(.5)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41489380"]/div[2]/div/div[8]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     self.pass_log()
+    #
+    # def test_fleaTick(self):
+    #     """
+    #     add dog breeds to services in mytime
+    #     :return: void
+    #     """
+    #
+    #     time.sleep(5)
+    #
+    #     # clicks edit button for blow
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41489442"]/div/div[4]/div/a')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     time.sleep(.25)
+    #
+    #     for table in tables:
+    #         time.sleep(.5)
+    #         # add new button on pop up
+    #         button = self.driver.find_element_by_xpath(
+    #             '//*[@id="variation41489442"]/div[2]/div/div[7]/div[3]/a')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #         time.sleep(.5)
+    #         # breed input field
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[2]/div[1]/div[2]/div/div/div/input')
+    #         time.sleep(2)
+    #         for index, row in table.iterrows():
+    #             print(row.Breed)
+    #             # this clicks addnew i think
+    #             self.search_field.send_keys(str(row.Breed))
+    #             time.sleep(.5)
+    #             # clicks on the right one
+    #             self.search_field.send_keys(Keys.DOWN + Keys.ENTER)
+    #
+    #         time.sleep(.5)
+    #         # fills out time
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[2] / div[2] / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[1] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         self.search_field = self.driver.find_element_by_xpath(
+    #             '/ html / body / div[8] / div / div / div / div / div / div[2] / div[3] / div[2] / div / div[2] / div / input')
+    #         self.search_field.send_keys("10")
+    #
+    #         time.sleep(.5)
+    #         # saves new thing
+    #         button = self.driver.find_element_by_xpath(
+    #             '/html/body/div[8]/div/div/div/div/div/div[3]/div/a[2]')
+    #         self.driver.execute_script("arguments[0].click();", button)
+    #
+    #     # presses save button for everyhting
+    #     button = self.driver.find_element_by_xpath(
+    #         '//*[@id="variation41489442"]/div[2]/div/div[8]/div[2]/input')
+    #     self.driver.execute_script("arguments[0].click();", button)
+    #     self.pass_log()
 
     def pass_log(self):
         stream_handler = logging.StreamHandler(sys.stdout)
